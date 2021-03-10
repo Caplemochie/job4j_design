@@ -20,9 +20,8 @@ public class EvenNumbersIterator implements Iterator<Integer> {
     public Integer next() {
         if (!hasNext()) {
             throw new NoSuchElementException();
-        } else {
-            return data[point++];
         }
+            return data[point++];
     }
 
     private Integer exist() {
