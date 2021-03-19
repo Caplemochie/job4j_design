@@ -6,8 +6,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 /**
  * @author Alexander Abramov (alllexe@mail.ru)
@@ -87,7 +86,7 @@ public class SimpleArrayTest {
         SimpleArray<String> simpleArray = new SimpleArray<>(3);
         simpleArray.add("aa");
         simpleArray.remove(0);
-        assertNull(simpleArray.get(0));
+        assertEquals(0, simpleArray.size());
     }
 
     @Test
