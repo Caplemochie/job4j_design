@@ -6,13 +6,9 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
-/**
- * @author Alexander Abramov (alllexe@mail.ru)
- * @version 1
- * @since 22.03.2019
- */
 public class SimpleArrayTest {
 
     @Test
