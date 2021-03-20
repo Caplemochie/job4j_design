@@ -16,17 +16,11 @@ public final class MemStore<T extends Base> implements Store<T> {
     }
 
     public int getIndex(String id) {
-        int index = 0;
-        boolean haveIndex = false;
-        for (T model : mem) {
-            if (model.getId().equals(id)) {
-                haveIndex = true;
-                break;
+        int index = -1;
+        for (int i = 0; i < mem.size(); i++) {
+            if (mem.get(i).getId().equals(id)) {
+                return i;
             }
-            index++;
-        }
-        if (!haveIndex) {
-            index = -1;
         }
         return index;
     }
