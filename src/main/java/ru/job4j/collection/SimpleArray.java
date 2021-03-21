@@ -17,6 +17,11 @@ public class SimpleArray<T> implements Iterable<T> {
         modCount = 0;
     }
 
+    public SimpleArray(int size) {
+        this.container = new Object[size];
+        modCount = 0;
+    }
+
     public T get(int index) {
         Objects.checkIndex(index, size);
         return (T) container[index];

@@ -8,6 +8,7 @@ import org.junit.Test;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.stream.IntStream;
 
 public class SimpleArrayTest {
 
@@ -53,5 +54,16 @@ public class SimpleArrayTest {
         Iterator<String> it = array.iterator();
         array.add("second");
         it.next();
+    }
+
+    @Test
+    public void whenAddedMoreInitCapacityShouldGrow() {
+        SimpleArray<String> array = new SimpleArray<>(2);
+        array.add("1");
+        array.add("2");
+        array.add("3");
+        assertThat(array.get(0), is("1"));
+        assertThat(array.get(1), is("2"));
+        assertThat(array.get(2), is("3"));
     }
 }
