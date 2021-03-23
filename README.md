@@ -11,4 +11,21 @@
 
    + [1.1. Итератор двумерного массива int[][]](./src/main/java/ru/job4j/iterator/MatrixIt.java)
    + [1.2. Итератор четных чисел](./src/main/java/ru/job4j/iterator/EvenNumbersIterator.java)
-   + [1.4. Преобразование итератора итераторов](./src/main/java/ru/job4j/iterator/FlatMap.java)
+   + [1.3. Преобразование итератора итераторов](./src/main/java/ru/job4j/iterator/FlatMap.java)
+   
++ ##### 2. Обобщение (generic).
+   
+   + [2.1. Создать параметризованный контейнер](./src/main/java/ru/job4j/generics/SimpleArray.java)
+   + [2.2. Реализовать Store (User, Role) на базе контейнера из задания 2.1.](./src/main/java/ru/job4j/generics/service/MemStore.java)
+
++ ##### 3. List interface.
+
+    + [3.1. Создать динамический список на базе массива](./src/main/java/ru/job4j/collection/SimpleArray.java)
+    + [3.2. Создать контейнер на базе связного списка](./src/main/java/ru/job4j/collection/list/SimpleLinkedList.java)
+    + [3.3. Создать контейнер типа Stack](./src/main/java/ru/job4j/collection/SimpleStack.java)
+    + [3.4. Создать контейнер типа Queue](./src/main/java/ru/job4j/collection/SimpleQueue.java)
+
+   
+   
+   
+   
