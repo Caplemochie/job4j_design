@@ -22,8 +22,9 @@
 
     + [3.1. Создать динамический список на базе массива](./src/main/java/ru/job4j/collection/SimpleArray.java)
     + [3.2. Создать контейнер на базе связного списка](./src/main/java/ru/job4j/collection/list/SimpleLinkedList.java)
-    + [3.3. Создать контейнер типа Stack](./src/main/java/ru/job4j/collection/SimpleStack.java)
-    + [3.4. Создать контейнер типа Queue](./src/main/java/ru/job4j/collection/SimpleQueue.java)
+    + [3.3. Используя контейнер на базе связанного списка создать контейнер Stack](./src/main/java/ru/job4j/collection/SimpleStack.java)
+    + [3.4. Создать чередь на двух стеках](./src/main/java/ru/job4j/collection/SimpleQueue.java)
+    + [3.5. Перевернуть связанный список](./src/main/java/ru/job4j/collection/ForwardLinked.java)
 
    
    
