@@ -9,6 +9,6 @@
 
 + ##### 1. Итератор.
 
-   + [1.1. Итератор двумерного массива int[][]](./blob/master/src/main/java/ru/job4j/iterator/MatrixIt.java)
-   + [1.2. Итератор четных чисел](./blob/master/src/main/java/ru/job4j/iterator/EvenNumbersIterator.java)
-   + [1.4. Преобразование итератора итераторов](./blob/master/src/main/java/ru/job4j/iterator/FlatMap.java)
+   + [1.1. Итератор двумерного массива int[][]](./src/main/java/ru/job4j/iterator/MatrixIt.java)
+   + [1.2. Итератор четных чисел](./src/main/java/ru/job4j/iterator/EvenNumbersIterator.java)
+   + [1.4. Преобразование итератора итераторов](./src/main/java/ru/job4j/iterator/FlatMap.java)
