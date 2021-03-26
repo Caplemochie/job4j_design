@@ -41,17 +41,15 @@ public class ListUtils {
     }
 
     public static <T> void replaceIf(List<T> list, Predicate<T> filter, T value) {
-        int index = 0;
-        for (T val : list) {
-            if (filter.test(val)) {
-                list.set(index, value);
+        ListIterator<T> listIt = list.listIterator();
+        while (listIt.hasNext()) {
+            if (filter.test(listIt.next())) {
+                listIt.set(value);
             }
-            index++;
         }
     }
 
     public static <T> void removeAll(List<T> list, List<T> elements) {
-
         for (ListIterator<T> elemIt = elements.listIterator(); elemIt.hasNext();) {
             T elem = elemIt.next();
             if (list.contains(elem)) {
