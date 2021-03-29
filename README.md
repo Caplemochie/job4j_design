@@ -25,8 +25,8 @@
     + [3.3. Используя контейнер на базе связанного списка создать контейнер Stack](./src/main/java/ru/job4j/collection/SimpleStack.java)
     + [3.4. Создать очередь на двух стеках](./src/main/java/ru/job4j/collection/SimpleQueue.java)
     + [3.5. Перевернуть связанный список](./src/main/java/ru/job4j/collection/ForwardLinked.java)
-
+    + [3.6. Использование ListIterator](./src/main/java/ru/job4j/iterator/ListUtils.java)
    
-   
-   
-   
++ ##### 3. Set interface.
+    
+    + [4.1. Реализовать коллекцию Set на базе массива](./src/main/java/ru/job4j/collection/set/SimpleSet.java)
