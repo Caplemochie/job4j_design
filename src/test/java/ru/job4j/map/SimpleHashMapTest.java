@@ -71,30 +71,13 @@ public class SimpleHashMapTest {
         assertThat(newMap.getSize(), is(3));
     }
 
-    @Test
-    public void iteratorHasNextBeforeAndAfterInvocation() {
-        SimpleHashMap<Integer, String> map = new SimpleHashMap<>();
-        map.insert(5, "Tagir");
-        map.insert(10, "Artem");
-        map.insert(2, "Gleb");
-        Iterator iterator = map.iterator();
-        assertThat(iterator.hasNext(), is(true));
-        assertThat(iterator.hasNext(), is(true));
-        System.out.println(map.entrySet()[0]);
-        assertThat(iterator.next(), is(map.entrySet()[2]));
-        assertThat(iterator.next(), is(map.entrySet()[5]));
-        iterator.hasNext();
-        assertThat(iterator.next(), is(map.entrySet()[10]));
-        assertThat(iterator.hasNext(), is(false));
-    }
-
     @Test(expected = NoSuchElementException.class)
     public void invocationNextWhenHasNotNextThrowsNSEE() {
         SimpleHashMap<Integer, String> map = new SimpleHashMap<>();
         map.insert(0, "Tagir");
         map.insert(1, "Gleb");
         map.insert(2, "Artem");
-        Iterator<String> iterator = map.iterator();
+        Iterator<Integer> iterator = map.iterator();
         iterator.next();
         iterator.next();
         iterator.next();
@@ -107,7 +90,7 @@ public class SimpleHashMapTest {
         map.insert(0, "Tagir");
         map.insert(1, "Gleb");
         map.insert(2, "Artem");
-        Iterator<String> it = map.iterator();
+        Iterator<Integer> it = map.iterator();
         map.delete(0);
         it.next();
     }
@@ -118,19 +101,22 @@ public class SimpleHashMapTest {
         map.insert(0, "Tagir");
         map.insert(1, "Gleb");
         map.insert(2, "Artem");
-        Iterator<String> it = map.iterator();
+        Iterator<Integer> it = map.iterator();
         map.insert(1, "Vovan");
         it.next();
     }
 
     @Test
-    public void whenInsertingUnconsecutiveKeysThenSecondCallNextShouldReturnExpectedValue() {
+    public void iteratorHasNextBeforeAndAfterInvocation() {
         SimpleHashMap<Integer, String> map = new SimpleHashMap<>();
         map.insert(1, "Gleb");
         map.insert(10, "Artem");
         Iterator iterator = map.iterator();
-        assertThat(iterator.next(), is(map.entrySet()[1]));
-        assertThat(iterator.next(), is(map.entrySet()[10]));
+        assertThat(iterator.hasNext(), is(true));
+        iterator.next();
+        assertThat(iterator.hasNext(), is(true));
+        iterator.next();
         assertThat(iterator.hasNext(), is(false));
+
     }
 }

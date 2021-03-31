@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
-public class SimpleHashMap<K, V> implements Iterable<V> {
+public class SimpleHashMap<K, V> implements Iterable<K> {
 
     private static final int DEFAULT_INITIAL_CAPACITY = 1 << 4;
     private static final float DEFAULT_LOAD_FACTOR = 0.75f;
@@ -100,13 +100,9 @@ public class SimpleHashMap<K, V> implements Iterable<V> {
         return size;
     }
 
-    public Node<K, V>[] entrySet() {
-        return table;
-    }
-
     @Override
-    public Iterator iterator() {
-        return new Iterator() {
+    public Iterator<K> iterator() {
+        return new Iterator<K>() {
 
             final int expectedModCount = modCount;
             private int point;
@@ -124,7 +120,7 @@ public class SimpleHashMap<K, V> implements Iterable<V> {
             }
 
             @Override
-            public Node<K, V> next() {
+            public K next() {
                 if (expectedModCount != modCount) {
                     throw new ConcurrentModificationException();
                 }
@@ -132,7 +128,7 @@ public class SimpleHashMap<K, V> implements Iterable<V> {
                     throw new NoSuchElementException();
                 }
                 count++;
-                return table[point++];
+                return (K) table[point++];
             }
         };
     }
