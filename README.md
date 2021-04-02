@@ -27,6 +27,12 @@
     + [3.5. Перевернуть связанный список](./src/main/java/ru/job4j/collection/ForwardLinked.java)
     + [3.6. Использование ListIterator](./src/main/java/ru/job4j/iterator/ListUtils.java)
    
-+ ##### 3. Set interface.
++ ##### 4. Set interface.
     
     + [4.1. Реализовать коллекцию Set на базе массива](./src/main/java/ru/job4j/collection/set/SimpleSet.java)
+    
++ ##### 5. Map.
+
+    + [5.1. Реализовать собственную структуру HashMap](./src/main/java/ru/job4j/map/SimpleHashMap.java)
+    
++ ##### 5. Tree .  
