@@ -2,10 +2,12 @@ package ru.job4j.io;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Config {
     private final String path;
@@ -17,12 +19,17 @@ public class Config {
 
     public void load() {
         try (BufferedReader read = new BufferedReader(new FileReader(this.path))) {
-            values.putAll(read.lines()
-                    .filter(s -> !s.contains("#"))
-                    .flatMap(String::lines)
+            read.lines()
+                    .filter(s -> !s.contains("#") && s.contains("="))
                     .map(s -> s.split("="))
-                    .collect(Collectors.toMap(key -> key[0], value -> value[1])));
-        } catch (Exception e) {
+                    .forEach(s -> {
+                        if (s.length != 2) {
+                            throw new IllegalArgumentException();
+                        }
+                        values.put(s[0], s[1]);
+                    });
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -44,7 +51,12 @@ public class Config {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Config("app.properties"));
+        //    System.out.println(new Config("app.properties"));
+
+        Config config = new Config("./app.proper.properties");
+        config.load();
+        System.out.println(config.value("name"));
+
 
     }
 }

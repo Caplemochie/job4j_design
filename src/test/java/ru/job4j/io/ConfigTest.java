@@ -14,17 +14,18 @@ public class ConfigTest {
         assertThat(config.value("hibernate.connection.password"), is("password"));
     }
 
-    @Test
-    public void whenGetLastProp1() {
-        Config config = new Config("./app.properties");
+
+    @Test(expected = IllegalArgumentException.class)
+    public void whenGetLastProp2() {
+        Config config = new Config("./app.proper.properties");
         config.load();
-        assertNull(config.value("hibernate.connection.password1"));
+        config.value("name");
     }
 
     @Test
     public void whenTryToGetPropWithComment() {
-        Config config = new Config("./app.properties");
+        Config config = new Config("./app.comment.properties");
         config.load();
-        assertNull(config.value("#"));
+        assertNull(config.value("hibernate.connection.password2"));
     }
 }
