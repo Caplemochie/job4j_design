@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class EchoServer {
-    @SuppressWarnings("checkstyle:InnerAssignment")
+
     public static void main(String[] args) throws IOException {
 
 
@@ -22,6 +22,7 @@ public class EchoServer {
                             if (str.contains("Hello")) {
                                 answer = "Hello";
                             } else if (str.contains("Exit")) {
+                                out.write("HTTP/1.1 200 OK\r\n\r\n".getBytes());
                                 server.close();
                             } else {
                                 answer = str.split("=")[1].split(" ")[0];
