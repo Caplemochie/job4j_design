@@ -29,25 +29,18 @@ public class ConsoleChat {
         while (!line.equals(OUT)) {
             if (line.equals(STOP)) {
                 while (!line.equals(CONTINUE)) {
-                    chat.add(line + System.lineSeparator());
+                    chat.add(line);
                     line = sc.nextLine();
                 }
             }
-
-            chat.add(line + System.lineSeparator());
+            chat.add(line);
             String randomText = botAnswersList.get(new Random().nextInt(botAnswersList.size() - 1));
             System.out.println(randomText);
-            chat.add(randomText + System.lineSeparator());
+            chat.add(randomText);
             line = sc.nextLine();
-
         }
+        writeLog(path, chat);
 
-        try (PrintWriter out = new PrintWriter(new FileOutputStream(path))) {
-            chat.forEach(out::println);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public static List<String> collectAnswers(String path) {
@@ -59,6 +52,14 @@ public class ConsoleChat {
             e.printStackTrace();
         }
         return botAnswersList;
+    }
+
+    public void writeLog(String path, List<String> chat) {
+        try (PrintWriter out = new PrintWriter(new FileOutputStream(path))) {
+            chat.forEach(out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
